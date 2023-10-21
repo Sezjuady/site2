@@ -46,15 +46,15 @@
 
 .image1 {
   z-index: 1;
-  top: 400px; 
+  top: 500px; 
 }
 
 .image2 {
   z-index: 2;
-  top: 500px; 
+  top: 700px; 
 }
 
 .image3 {
   z-index: 3;
-  top: 700px
+  top: 900px
 }
