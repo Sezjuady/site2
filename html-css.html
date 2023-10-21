@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>История Dota 2</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+</head>
+<body>
+  <div class="text">
+    <main>
+      <h1>История Dota 2</h1>
+        <p onmouseover="changeColor(this)" onmouseout="restoreOriginal(this)">Dota 2 - популярная многопользовательская игра в жанре MOBA. Она была разработана и выпущена компанией Valve Corporation. Игра построена на основе популярной карте "Defense of the Ancients" для Warcraft III.</p>
+        <p onmouseover="changeSize(this)" onmouseout="restoreOriginal(this)">Ключевые моменты развития Dota 2</p>
+    </main>
+  </div>
+
+  <!-- Кнопки "Navigator," "Location," "Screen" -->
+  <button class="button" id="windowButton">Window</button>
+  <button class="button" id="navigatorButton">Navigator</button>
+  <button class="button" id="locationButton">Location</button>
+  <button class="button" id="screenButton">Screen</button>
+
+  <!-- Скрипт JavaScript для изменения цвета символов и шрифта при наведении на абзацы -->
+  <script>
+    function changeColor(element) {
+      element.classList.add("change-color");
+    }
+
+    // Скрипт JavaScript для восстановления первоначального вида при убирании мыши
+    function restoreOriginal(element) {
+      element.classList.remove("change-color");
+      element.classList.remove("change-size");
+    }
+  </script>
+
+  <!-- Скрипт JavaScript для изменения величины правого поля и отступа первой строки при наведении на абзац -->
+  <script>
+    function changeSize(element) {
+      element.classList.add("change-size");
+    }
+  </script>
+
+  <!-- Таблица с ячейками и альтернативными стилями -->
+  <table>
+    <tr>
+      <td class="cell" onmouseover="applyAlternativeStyle(this)" onmouseout="restoreOriginalStyle(this)">Ячейка 1</td>
+      <td class="cell" onmouseover="applyAlternativeStyle(this)" onmouseout="restoreOriginalStyle(this)">Ячейка 2</td>
+    </tr>
+    <tr>
+      <td class="cell" onmouseover="applyAlternativeStyle(this)" onmouseout="restoreOriginalStyle(this)">Ячейка 3</td>
+      <td class="cell" onmouseover="applyAlternativeStyle(this)" onmouseout="restoreOriginalStyle(this)">Ячейка 4</td>
+    </tr>
+  </table>
+
+  <!-- Скрипт JavaScript для альтернативных стилей ячеек таблицы -->
+  <script>
+    function applyAlternativeStyle(cell) {
+      cell.classList.add("cell-alternative");
+    }
+
+    function restoreOriginalStyle(cell) {
+      cell.classList.remove("cell-alternative");
+    }
+  </script>
+
+<script>
+   document.getElementById('windowButton').addEventListener('click', function() {
+      var lastModified = document.lastModified;
+      alert("Последнее изменение документа: " + lastModified);
+    });
+
+  // Обработчик для кнопки "Navigator"
+  document.getElementById("navigatorButton").addEventListener("click", function() {
+    var navigatorInfo = "Тип браузера: " + navigator.appName + "\n";
+    navigatorInfo += "Название браузера: " + navigator.appVersion + "\n";
+    alert(navigatorInfo);
+  });
+
+  // Обработчик для кнопки "Location"
+  document.getElementById("locationButton").addEventListener("click", function() {
+    var username = prompt("Введите ваше имя:");
+    var locationInfo = "Имя пользователя: " + username + "\n";
+    locationInfo += "Адрес загруженного документа: " + location.href;
+    alert(locationInfo);
+  });
+
+  // Обработчик для кнопки "Screen"
+  document.getElementById("screenButton").addEventListener("click", function() {
+    var screenInfo = "Ширина экрана: " + screen.width + " пикселей\n";
+    screenInfo += "Высота экрана: " + screen.height + " пикселей\n";
+    screenInfo += "Глубина цвета: " + screen.colorDepth + " бит\n";
+    var confirmResponse = confirm(screenInfo);
+
+    if (confirmResponse) {
+      alert(screenInfo);
+    }
+  });
+</script>
+
+<img src="image1.jpg" class="image image1" style="z-index: 1">
+<img src="image2.jpg" class="image image2" style="z-index: 2">
+<img src="image3.jpg" class="image image3" style="z-index: 3">
+
+<button class="button" id="hideMiddleImage">Скрыть средний рисунок</button>
+<button class="button" id="showMiddleImage">Показать средний рисунок</button>
+<button class="button" id="swapImages">Поменять слои рисунков</button>
+
+<script>
+  // Функция для скрытия среднего рисунка
+  document.getElementById("hideMiddleImage").addEventListener("click", function() {
+    document.querySelector(".image2").style.display = "none";
+  });
+
+  // Функция для показа среднего рисунка
+  document.getElementById("showMiddleImage").addEventListener("click", function() {
+    document.querySelector(".image2").style.display = "block";
+  });
+
+  // Функция для обмена местами нижнего и верхнего слоев
+  document.getElementById("swapImages").addEventListener("click", function() {
+    var image1 = document.querySelector(".image1");
+    var image3 = document.querySelector(".image3");
+    var zIndex1 = image1.style.zIndex;
+    var zIndex2 = image3.style.zIndex;
+    image1.style.zIndex = zIndex2;
+    image3.style.zIndex = zIndex1;
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+/* custom.css */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.button {
+  margin: 5px;
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #2980b9;
+}
+
+.change-color {
+  color: red;
+  font-family: Arial, sans-serif;
+}
+
+.change-size {
+  padding-right: 3cm;
+  text-indent: 2.5cm;
+}
+
+.cell {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.cell-alternative {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+.image {
+  position: absolute;
+}
+
+.image1 {
+  z-index: 1;
+  top: 400px; 
+}
+
+.image2 {
+  z-index: 2;
+  top: 500px; 
+}
+
+.image3 {
+  z-index: 3;
+  top: 700px
+}
